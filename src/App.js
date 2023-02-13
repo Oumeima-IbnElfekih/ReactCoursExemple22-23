@@ -1,18 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-
-import Mouting from './Cycle de Vie [CC]/Mounting';
-import { Update } from './Cycle de Vie [CC]/Update';
-import Unmouting from './Cycle de Vie [CC]/Unmounting';
+import FunctionalComponent from './FC/FonctionalComponent';
+import useWindowWidth from './Custom-hooks/useWindowWidth';
+import useIsOnline from './Custom-hooks/useIsOnline';
 
 
 
 
 function App() {
-  
+  const {width,height}= useWindowWidth() ;
+  const online= useIsOnline()
   return (
     <>
-    <Unmouting/>
+    {width} {height}
+    {online ? <p> true </p> : <p> false </p>}
+    <FunctionalComponent />
    </>
   );
 }
