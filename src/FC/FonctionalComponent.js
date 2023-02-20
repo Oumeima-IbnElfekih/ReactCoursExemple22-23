@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState ,React} from "react";
-import MyContext from "./MyContext";
+import { MyContext } from "..";
+
 
 function FunctionnalComponent() {
   const contextValue = useContext(MyContext);

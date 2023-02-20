@@ -1,7 +1,11 @@
+import { useLocation } from "react-router-dom"
+
 export default function FunctionnalComponent() {
 
-
-    return <h1>Hello FC</h1>
+    const { state } = useLocation() ;
+    return <h1>Hello FC
+        {state.name}
+    </h1>
 
 
 
