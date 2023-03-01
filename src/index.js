@@ -5,12 +5,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from 'react-router-dom';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import compteurReducer from './ExempleRedux/reducers'
+// import store from './ReduxToolKit/store';
 export const MyContext = React.createContext();
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//creation du store 
+let store = createStore(compteurReducer,
+  // window.__REDUX_DEVTOOLS_EXTENSION__ / window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+   );
+ // console.log(store);
+ // store.subscribe(()=> console.log(store.getState()))
 root.render(
   <React.StrictMode>
    <BrowserRouter>
-    <App/>
+   <Provider store={store}> <App /> </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import React, { Suspense } from 'react';
+import Redux from './ExempleRedux/ReduxComponent';
+import Counter from './ReduxToolKit/ReduxToolKitComponent';
 
 const Home = React.lazy(()=> import('./Home')) ;
 const FuncComponent = React.lazy(()=> import('./ClassComponent')) ;
@@ -21,6 +23,8 @@ function App() {
       <Route path='/application'>
              <Route index element={<Home/>} />
              <Route path="classComponent" element={<FuncComponent/>} />
+             <Route path="reduxComponent" element={<Redux/>} />
+             <Route path="reduxtoolkitComponent" element={<Counter/>} />
       </Route>
       <Route path='*' element={<NotFound />}/>
    </Routes>
